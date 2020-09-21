@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
-import CardProdutos from './../components/CardProdutos'
-import { somarValores } from './../helper/functions'
+import CardProdutos from './../../components/CardProdutos'
+import { somarValores } from './../../helper/functions'
 
 export default function Produtos(){
 

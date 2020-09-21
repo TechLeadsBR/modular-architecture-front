@@ -4,12 +4,23 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import { RoutesPages, NotFoundPage} from './RoutesPages'
+import { RoutesPages, HomePage,NotFoundPage} from './RoutesPages'
+
+const adminPermission = ({ component: Component }) => {
+  <Route
+    render={(props) => {
+        <Component {...props}/>
+
+    }}
+  
+  />
+}
 
 function App() {
   return (
      <Router>
         <Switch>
+          <Route exact path={HomePage.path} component={HomePage.component} />
           {RoutesPages.map((p, i) => <Route key={i} path={p.path} component={p.component} />)}
           <Route component={NotFoundPage.component} />
         </Switch>
