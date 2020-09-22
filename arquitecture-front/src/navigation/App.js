@@ -5,16 +5,17 @@ import {
   Route
 } from 'react-router-dom'
 import { RoutesPages, HomePage,NotFoundPage} from './RoutesPages'
+import './reset.css'
 
-const adminPermission = ({ component: Component }) => {
-  <Route
-    render={(props) => {
-        <Component {...props}/>
+// const adminPermission = ({ component: Component }) => {
+//   <Route
+//     render={(props) => {
+//         <Component {...props}/>
 
-    }}
+//     }}
   
-  />
-}
+//   />
+// }
 
 function App() {
   return (

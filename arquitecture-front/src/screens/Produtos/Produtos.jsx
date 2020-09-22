@@ -1,6 +1,8 @@
 import React, { useState }from 'react'
-import CardProdutos from './../../components/CardProdutos'
+import CardProdutos from './../../components/CardProdutos/CardProdutos'
 import { somarValores } from './../../helper/functions'
+import { Link } from 'react-router-dom'
+import Header from './../../components/Header/Header'
 
 export default function Produtos(){
 
@@ -16,11 +18,13 @@ export default function Produtos(){
 
   return (
     <div>
+      <Header />
       <h1>Produtos</h1>
       {
         produtos.map((p, i) => <CardProdutos key={i} nome={p.nome} preco={p.preco} /> )
       }
       <h2>Soma total: {somarValores(produtosArray.map((p) => p.preco))}</h2>
+      <h2><Link to="/">Home</Link></h2>
     </div>
   )
 }

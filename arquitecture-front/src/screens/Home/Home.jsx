@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Header from './../../components/Header/Header'
 
 export default function Home(){
     return (
         <div>
+            <Header />
             <h1>Home</h1>
             <p>
                 Lorem ipsum quam senectus taciti ornare rhoncus curabitur facilisis auctor sit, amet rhoncus nostra varius urna ultrices sagittis habitant nunc platea, nisi fermentum himenaeos vestibulum aptent sed ligula sed nullam. imperdiet porttitor justo himenaeos sed lectus pulvinar pharetra cubilia, donec non varius eleifend duis sem in velit eros, laoreet fusce litora curae habitasse pellentesque sapien. mollis hendrerit molestie potenti mi tincidunt pharetra donec potenti malesuada etiam mauris curae, sed porta sodales tortor consectetur nibh mi aliquet quisque adipiscing inceptos. odio imperdiet cursus accumsan bibendum mollis aliquam laoreet eros adipiscing, leo mattis ante a volutpat purus vestibulum massa est, mattis massa primis sit aliquet commodo ipsum lacinia. 
@@ -19,6 +22,8 @@ export default function Home(){
             <p>
                 Facilisis torquent id donec tortor leo turpis molestie bibendum phasellus aliquet, torquent tempor augue torquent scelerisque torquent sit aliquam hendrerit. phasellus mi iaculis massa curabitur torquent leo enim tristique velit ac consectetur senectus, leo duis consequat conubia velit aenean mollis id eros dictum nunc. odio laoreet lacus eros cras, vitae ornare lacinia, lacus proin imperdiet. donec mauris sollicitudin vivamus mi augue potenti, fermentum scelerisque eros facilisis dapibus id vestibulum, sagittis eget lectus dolor fringilla. pharetra consectetur pellentesque pharetra, maecenas. 
             </p>
+            <hr/>
+            <h2><Link to="/produtos">Tela de produtos</Link></h2>
         </div>
     )
 }
