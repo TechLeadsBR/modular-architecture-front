@@ -3,16 +3,23 @@ import Header from './../../components/Header/Header'
 import Input from './../../components/Input/Input'
 import { useState } from 'react'
 import { baseApi } from './../../helper/constants'
+import axios from 'axios'
+import { useEffect } from 'react'
 
 export default function Login(){
 
     const [login, setLogin] = useState({ email: null, senha: null })
     const setValueState = (key, value) => setLogin({ ...login, [key]: value })
 
-    const submitLogin = () => {
-        fetch("http://localhost:5000/tipousuario")   
-        .then(resp => console.log(resp))
-        .catch(erro => console.log(erro))
+    const submitLogin = (event) => {
+        event.preventDefault()
+        console.log('Entrou')
+        axios.post("http://localhost:5000/login", {
+            email: login.email,
+            senha: login.senha
+        })
+            .then(resp => console.log(resp))
+            .catch(erro => console.log(erro))
     }
 
     return (
@@ -31,7 +38,7 @@ export default function Login(){
                             placeHolder={"Senha"}
                             onChange={(event) => setValueState("senha", event.target.value)}    
                         />
-                        <button onClick={() => submitLogin()}>Enviar</button>
+                        <button onClick={(e) => submitLogin(e)}>Enviar</button>
                     </div>
                 </form>
             </div>
