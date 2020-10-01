@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './../../components/Header/Header'
+import context from '../../components/UserContext/contextUser'
 
 export default function Home(){
+
+    const contextAtual = useContext(context)
+
     return (
         <div>
             <Header />
@@ -24,6 +28,7 @@ export default function Home(){
             </p>
             <hr/>
             <h2><Link to="/produtos">Tela de produtos</Link></h2>
+            <h4>Token: {contextAtual.token}</h4>
         </div>
     )
 }
